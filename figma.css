@@ -1,0 +1,108 @@
+:root{
+  --plaster:#E8E8E3;
+  --ink:#16232B;
+  --ochre:#C68A2A;
+  --sage:#7F8F7C;
+  --white:#FAFAF8;
+  --line:rgba(22,35,43,.18);
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"DM Sans","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--plaster);color:var(--ink);line-height:1.6;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+ 
+/* header */
+.site-header{position:sticky;top:0;z-index:10;background:var(--plaster);border-bottom:1px solid var(--line)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--display);font-weight:700;font-size:1.15rem;text-decoration:none;letter-spacing:-.01em}
+.site-header nav{display:flex;gap:28px;align-items:center}
+.site-header nav a{text-decoration:none;font-size:.95rem}
+.site-header nav a:hover{text-decoration:underline}
+.btn{display:inline-block;background:var(--ink);color:var(--white)!important;padding:12px 22px;border-radius:2px;text-decoration:none;font-weight:600;font-size:.95rem}
+.btn:hover{background:#0c161c;text-decoration:none!important}
+.btn.alt{background:transparent;color:var(--ink)!important;border:1.5px solid var(--ink)}
+.btn.alt:hover{background:var(--ink);color:var(--white)!important}
+ 
+/* hero */
+.hero{padding:72px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,6vw,4.6rem);line-height:1;letter-spacing:-.03em;margin-bottom:24px}
+.hero p.lead{font-size:1.15rem;max-width:34em;margin-bottom:32px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:28px}
+.rating{display:flex;align-items:center;gap:12px;font-size:.95rem}
+.stars{color:var(--ochre);letter-spacing:2px;font-size:1.1rem}
+ 
+/* room composition */
+.room{position:relative;aspect-ratio:4/5;background:var(--ink);border-radius:2px;overflow:hidden}
+.room .wall{position:absolute;inset:0 0 22% 0;background:var(--sage)}
+.room .floor{position:absolute;inset:78% 0 0 0;background:#2b3a43}
+.room .arch{position:absolute;left:10%;top:12%;width:34%;height:52%;background:var(--plaster);border-radius:999px 999px 0 0}
+.room .window{position:absolute;right:10%;top:16%;width:30%;height:34%;background:var(--white);border:6px solid var(--ink)}
+.room .window::before,.room .window::after{content:"";position:absolute;background:var(--ink)}
+.room .window::before{left:50%;top:0;bottom:0;width:4px;transform:translateX(-50%)}
+.room .window::after{top:50%;left:0;right:0;height:4px;transform:translateY(-50%)}
+.room .sofa{position:absolute;left:8%;right:8%;bottom:14%;height:20%;background:var(--ochre);border-radius:14px 14px 4px 4px}
+.room .sofa::before{content:"";position:absolute;left:6%;right:6%;top:-40%;height:50%;background:#b0791f;border-radius:14px 14px 0 0}
+.room .lamp{position:absolute;right:12%;bottom:30%;width:4px;height:36%;background:var(--white)}
+.room .lamp::before{content:"";position:absolute;left:-22px;top:-14px;width:48px;height:30px;background:var(--white);border-radius:24px 24px 4px 4px}
+.room .rug{position:absolute;left:18%;right:18%;bottom:6%;height:5%;background:var(--plaster);border-radius:50%}
+ 
+/* sections */
+section{padding:80px 0}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:16px}
+.intro{max-width:38em;margin-bottom:48px}
+.dark{background:var(--ink);color:var(--white)}
+.dark .intro{color:#cfd6d9}
+ 
+/* services */
+.groups{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink)}
+.group{padding:28px 28px 8px 0}
+.group+.group{padding-left:28px;border-left:1px solid var(--line)}
+.group h3{font-family:var(--display);font-size:1.35rem;margin-bottom:6px}
+.group p{font-size:.95rem;margin-bottom:16px;color:#3a4a53}
+.group ul{list-style:none;margin-bottom:20px}
+.group li{padding:9px 0;border-top:1px solid var(--line);font-size:.98rem}
+ 
+/* approach */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;border-top:2px solid var(--ochre);padding-top:18px}
+.steps li::before{content:counter(s);font-family:var(--display);font-size:2rem;font-weight:800;color:var(--ochre);display:block;line-height:1;margin-bottom:10px}
+.steps h3{font-family:var(--display);font-size:1.15rem;margin-bottom:6px}
+.steps p{font-size:.95rem;color:#cfd6d9}
+ 
+/* proof */
+.proof .wrap{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center}
+.score{font-family:var(--display);font-weight:800;font-size:clamp(5rem,12vw,9rem);line-height:.9;letter-spacing:-.05em}
+.proof .stars{font-size:1.6rem;display:block;margin:10px 0 4px}
+ 
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.details{list-style:none;margin:24px 0 32px}
+.details li{padding:14px 0;border-top:1px solid rgba(250,250,248,.2)}
+.details b{display:block;font-family:var(--display);font-weight:600;font-size:.95rem;color:var(--ochre)}
+.details a{text-decoration:none}
+.details a:hover{text-decoration:underline}
+.contact .btn{background:var(--ochre);color:var(--ink)!important}
+.contact .btn:hover{background:#d99a36}
+.contact .btn.alt{background:transparent;color:var(--white)!important;border-color:var(--white)}
+.contact .btn.alt:hover{background:var(--white);color:var(--ink)!important}
+ 
+footer{background:#0f1a20;color:#aab3b7;padding:24px 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+ 
+@media(max-width:860px){
+  .hero .wrap,.contact .wrap,.proof .wrap{grid-template-columns:1fr;gap:36px}
+  .groups{grid-template-columns:1fr}
+  .group,.group+.group{padding:24px 0 8px;border-left:0}
+  .group+.group{border-top:1px solid var(--line)}
+  .steps{grid-template-columns:1fr 1fr}
+  .site-header nav a:not(.btn){display:none}
+  .room{aspect-ratio:1/1}
+}
+@media(max-width:480px){.steps{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+ 
